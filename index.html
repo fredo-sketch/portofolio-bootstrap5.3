@@ -19,6 +19,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <button class="btn btn-outline-light btn-sm ms-2" id="btn-mode">🌙 Dark</button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
@@ -197,5 +198,21 @@
     </footer>
     <!-- Akhir Footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+  const btn = document.getElementById('btn-mode');
+  const html = document.documentElement;
+
+  btn.addEventListener('click', () => {
+    if (html.getAttribute('data-bs-theme') === 'light') {
+      html.setAttribute('data-bs-theme', 'dark');
+      btn.innerHTML = '☀️ Light';
+      btn.classList.replace('btn-outline-light', 'btn-outline-warning');
+    } else {
+      html.setAttribute('data-bs-theme', 'light');
+      btn.innerHTML = '🌙 Dark';
+      btn.classList.replace('btn-outline-warning', 'btn-outline-light');
+    }
+  });
+</script>
   </body>
 </html>
